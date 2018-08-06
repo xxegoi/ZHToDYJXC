@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EMTDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t_DY_YZK">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="int" Nullable="false" />
+          <Property Name="FClassTypeID" Type="int" Nullable="false" />
+          <Property Name="FBillNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FBiller" Type="int" Nullable="false" />
+          <Property Name="FDate" Type="datetime" />
+          <Property Name="FChecker" Type="int" Nullable="false" />
+          <Property Name="FChekcDate" Type="datetime" />
+          <Property Name="FOrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FAmountType" Type="int" Nullable="false" />
+          <Property Name="FBase" Type="int" Nullable="false" />
+          <Property Name="FOrganization" Type="int" Nullable="false" />
+          <Property Name="FCustomerNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FDeliveryDate" Type="datetime" />
+          <Property Name="FBase1" Type="int" Nullable="false" />
+          <Property Name="FQty" Type="int" Nullable="false" />
+          <Property Name="FWeight" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPBNote" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FWorkFlow" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FSL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FDD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FSG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FDXFK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FJB" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FQB" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FJSZ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FJRY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FAcross" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FStraight" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FTweak" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FZT" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FJD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FNOTE" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FItemid" Type="int" Nullable="false" />
+          <Property Name="FRow" Type="int" Nullable="false" />
+          <Property Name="FGH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FDDBZ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fkz" Type="varchar" MaxLength="255" />
+          <Property Name="fjz" Type="varchar" MaxLength="255" />
+          <Property Name="FPZ1" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ2" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ3" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ4" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ5" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ6" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ7" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ8" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ9" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ10" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ11" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ12" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ13" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ14" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ15" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ16" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ17" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ18" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ19" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ20" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ21" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ22" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ23" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ24" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ25" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ26" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ27" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ28" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ29" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ30" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ31" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ32" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ33" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ34" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ35" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ36" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ37" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ38" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ39" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ40" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ41" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ42" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ43" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ44" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ45" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ46" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ47" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ48" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ49" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ50" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ51" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ52" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ53" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ54" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ55" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ56" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ57" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ58" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ59" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ60" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ61" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ62" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ63" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ64" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ65" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ66" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ67" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ68" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ69" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ70" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ71" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ72" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ73" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ74" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ75" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ76" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ77" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ78" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ79" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ80" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ81" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ82" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ83" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ84" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ85" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ86" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ87" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ88" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ89" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ90" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ91" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPZ92" Type="decimal" Precision="23" Scale="10" />
+          <Property Name="FClosed" Type="bit" Nullable="false" />
+          <Property Name="FGYLC" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FOrderCheckIdea1" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FOrderCheckIdea2" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FOrderCheckIdea3" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FNoteForCP" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="FSumPZ" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FSD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FXJKZ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FFundNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FBrandInfo" Type="int" Nullable="false" />
+          <Property Name="FDecimal" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FDecimal1" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+          <Property Name="FPBName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FDate1" Type="datetime" />
+          <Property Name="FDate2" Type="datetime" />
+          <Property Name="FDate4" Type="datetime" />
+          <Property Name="FDate5" Type="datetime" />
+          <Property Name="FDate6" Type="datetime" />
+          <Property Name="FDate3" Type="datetime" />
+          <Property Name="FJJSX" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_DY_YZKEntry1">
+          <Key>
+            <PropertyRef Name="FEntryID" />
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FEntryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FID" Type="int" Nullable="false" />
+          <Property Name="FIndex" Type="int" Nullable="false" />
+          <Property Name="FPB" Type="int" Nullable="false" />
+          <Property Name="FXM" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FPZ" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EMTDBStoreContainer">
+          <EntitySet Name="t_DY_YZK" EntityType="Self.t_DY_YZK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_DY_YZKEntry1" EntityType="Self.t_DY_YZKEntry1" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EMTDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="EMTDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t_DY_YZK" EntityType="EMTDB.t_DY_YZK" />
+          <EntitySet Name="t_DY_YZKEntry1" EntityType="EMTDB.t_DY_YZKEntry1" />
+        </EntityContainer>
+        <EntityType Name="t_DY_YZK">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Int32" Nullable="false" />
+          <Property Name="FClassTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FBillNo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FBiller" Type="Int32" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Precision="3" />
+          <Property Name="FChecker" Type="Int32" Nullable="false" />
+          <Property Name="FChekcDate" Type="DateTime" Precision="3" />
+          <Property Name="FOrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAmountType" Type="Int32" Nullable="false" />
+          <Property Name="FBase" Type="Int32" Nullable="false" />
+          <Property Name="FOrganization" Type="Int32" Nullable="false" />
+          <Property Name="FCustomerNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="FBase1" Type="Int32" Nullable="false" />
+          <Property Name="FQty" Type="Int32" Nullable="false" />
+          <Property Name="FWeight" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPBNote" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FWorkFlow" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FSL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FSG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDXFK" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FJB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FQB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FJSZ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FJRY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAcross" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FStraight" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FTweak" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FZT" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FJD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FNOTE" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FItemid" Type="Int32" Nullable="false" />
+          <Property Name="FRow" Type="Int32" Nullable="false" />
+          <Property Name="FGH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDDBZ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fkz" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fjz" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FPZ1" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ2" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ3" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ4" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ5" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ6" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ7" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ8" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ9" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ10" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ11" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ12" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ13" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ14" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ15" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ16" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ17" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ18" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ19" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ20" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ21" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ22" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ23" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ24" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ25" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ26" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ27" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ28" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ29" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ30" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ31" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ32" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ33" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ34" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ35" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ36" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ37" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ38" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ39" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ40" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ41" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ42" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ43" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ44" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ45" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ46" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ47" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ48" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ49" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ50" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ51" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ52" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ53" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ54" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ55" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ56" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ57" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ58" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ59" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ60" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ61" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ62" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ63" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ64" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ65" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ66" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ67" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ68" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ69" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ70" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ71" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ72" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ73" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ74" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ75" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ76" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ77" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ78" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ79" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ80" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ81" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ82" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ83" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ84" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ85" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ86" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ87" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ88" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ89" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ90" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ91" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPZ92" Type="Decimal" Precision="23" Scale="10" />
+          <Property Name="FClosed" Type="Boolean" Nullable="false" />
+          <Property Name="FGYLC" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FOrderCheckIdea1" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FOrderCheckIdea2" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FOrderCheckIdea3" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FNoteForCP" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FSumPZ" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FSD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FXJKZ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FFundNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FBrandInfo" Type="Int32" Nullable="false" />
+          <Property Name="FDecimal" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FDecimal1" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+          <Property Name="FPBName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDate1" Type="DateTime" Precision="3" />
+          <Property Name="FDate2" Type="DateTime" Precision="3" />
+          <Property Name="FDate4" Type="DateTime" Precision="3" />
+          <Property Name="FDate5" Type="DateTime" Precision="3" />
+          <Property Name="FDate6" Type="DateTime" Precision="3" />
+          <Property Name="FDate3" Type="DateTime" Precision="3" />
+          <Property Name="FJJSX" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_DY_YZKEntry1">
+          <Key>
+            <PropertyRef Name="FEntryID" />
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FEntryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FID" Type="Int32" Nullable="false" />
+          <Property Name="FIndex" Type="Int32" Nullable="false" />
+          <Property Name="FPB" Type="Int32" Nullable="false" />
+          <Property Name="FXM" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FPZ" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="EMTDB" />
+        <Alias Key="Target" Value="EMTDB.Store" />
+        <EntityContainerMapping CdmEntityContainer="EMTDBContainer" StorageEntityContainer="EMTDBStoreContainer">
+          <EntitySetMapping Name="t_DY_YZK">
+            <EntityTypeMapping TypeName="EMTDB.t_DY_YZK">
+              <MappingFragment StoreEntitySet="t_DY_YZK">
+                <ScalarProperty Name="FJJSX" ColumnName="FJJSX" />
+                <ScalarProperty Name="FDate3" ColumnName="FDate3" />
+                <ScalarProperty Name="FDate6" ColumnName="FDate6" />
+                <ScalarProperty Name="FDate5" ColumnName="FDate5" />
+                <ScalarProperty Name="FDate4" ColumnName="FDate4" />
+                <ScalarProperty Name="FDate2" ColumnName="FDate2" />
+                <ScalarProperty Name="FDate1" ColumnName="FDate1" />
+                <ScalarProperty Name="FPBName" ColumnName="FPBName" />
+                <ScalarProperty Name="FDecimal1" ColumnName="FDecimal1" />
+                <ScalarProperty Name="FDecimal" ColumnName="FDecimal" />
+                <ScalarProperty Name="FBrandInfo" ColumnName="FBrandInfo" />
+                <ScalarProperty Name="FFundNo" ColumnName="FFundNo" />
+                <ScalarProperty Name="FXJKZ" ColumnName="FXJKZ" />
+                <ScalarProperty Name="FSD" ColumnName="FSD" />
+                <ScalarProperty Name="FSumPZ" ColumnName="FSumPZ" />
+                <ScalarProperty Name="FNoteForCP" ColumnName="FNoteForCP" />
+                <ScalarProperty Name="FOrderCheckIdea3" ColumnName="FOrderCheckIdea3" />
+                <ScalarProperty Name="FOrderCheckIdea2" ColumnName="FOrderCheckIdea2" />
+                <ScalarProperty Name="FOrderCheckIdea1" ColumnName="FOrderCheckIdea1" />
+                <ScalarProperty Name="FGYLC" ColumnName="FGYLC" />
+                <ScalarProperty Name="FClosed" ColumnName="FClosed" />
+                <ScalarProperty Name="FPZ92" ColumnName="FPZ92" />
+                <ScalarProperty Name="FPZ91" ColumnName="FPZ91" />
+                <ScalarProperty Name="FPZ90" ColumnName="FPZ90" />
+                <ScalarProperty Name="FPZ89" ColumnName="FPZ89" />
+                <ScalarProperty Name="FPZ88" ColumnName="FPZ88" />
+                <ScalarProperty Name="FPZ87" ColumnName="FPZ87" />
+                <ScalarProperty Name="FPZ86" ColumnName="FPZ86" />
+                <ScalarProperty Name="FPZ85" ColumnName="FPZ85" />
+                <ScalarProperty Name="FPZ84" ColumnName="FPZ84" />
+                <ScalarProperty Name="FPZ83" ColumnName="FPZ83" />
+                <ScalarProperty Name="FPZ82" ColumnName="FPZ82" />
+                <ScalarProperty Name="FPZ81" ColumnName="FPZ81" />
+                <ScalarProperty Name="FPZ80" ColumnName="FPZ80" />
+                <ScalarProperty Name="FPZ79" ColumnName="FPZ79" />
+                <ScalarProperty Name="FPZ78" ColumnName="FPZ78" />
+                <ScalarProperty Name="FPZ77" ColumnName="FPZ77" />
+                <ScalarProperty Name="FPZ76" ColumnName="FPZ76" />
+                <ScalarProperty Name="FPZ75" ColumnName="FPZ75" />
+                <ScalarProperty Name="FPZ74" ColumnName="FPZ74" />
+                <ScalarProperty Name="FPZ73" ColumnName="FPZ73" />
+                <ScalarProperty Name="FPZ72" ColumnName="FPZ72" />
+                <ScalarProperty Name="FPZ71" ColumnName="FPZ71" />
+                <ScalarProperty Name="FPZ70" ColumnName="FPZ70" />
+                <ScalarProperty Name="FPZ69" ColumnName="FPZ69" />
+                <ScalarProperty Name="FPZ68" ColumnName="FPZ68" />
+                <ScalarProperty Name="FPZ67" ColumnName="FPZ67" />
+                <ScalarProperty Name="FPZ66" ColumnName="FPZ66" />
+                <ScalarProperty Name="FPZ65" ColumnName="FPZ65" />
+                <ScalarProperty Name="FPZ64" ColumnName="FPZ64" />
+                <ScalarProperty Name="FPZ63" ColumnName="FPZ63" />
+                <ScalarProperty Name="FPZ62" ColumnName="FPZ62" />
+                <ScalarProperty Name="FPZ61" ColumnName="FPZ61" />
+                <ScalarProperty Name="FPZ60" ColumnName="FPZ60" />
+                <ScalarProperty Name="FPZ59" ColumnName="FPZ59" />
+                <ScalarProperty Name="FPZ58" ColumnName="FPZ58" />
+                <ScalarProperty Name="FPZ57" ColumnName="FPZ57" />
+                <ScalarProperty Name="FPZ56" ColumnName="FPZ56" />
+                <ScalarProperty Name="FPZ55" ColumnName="FPZ55" />
+                <ScalarProperty Name="FPZ54" ColumnName="FPZ54" />
+                <ScalarProperty Name="FPZ53" ColumnName="FPZ53" />
+                <ScalarProperty Name="FPZ52" ColumnName="FPZ52" />
+                <ScalarProperty Name="FPZ51" ColumnName="FPZ51" />
+                <ScalarProperty Name="FPZ50" ColumnName="FPZ50" />
+                <ScalarProperty Name="FPZ49" ColumnName="FPZ49" />
+                <ScalarProperty Name="FPZ48" ColumnName="FPZ48" />
+                <ScalarProperty Name="FPZ47" ColumnName="FPZ47" />
+                <ScalarProperty Name="FPZ46" ColumnName="FPZ46" />
+                <ScalarProperty Name="FPZ45" ColumnName="FPZ45" />
+                <ScalarProperty Name="FPZ44" ColumnName="FPZ44" />
+                <ScalarProperty Name="FPZ43" ColumnName="FPZ43" />
+                <ScalarProperty Name="FPZ42" ColumnName="FPZ42" />
+                <ScalarProperty Name="FPZ41" ColumnName="FPZ41" />
+                <ScalarProperty Name="FPZ40" ColumnName="FPZ40" />
+                <ScalarProperty Name="FPZ39" ColumnName="FPZ39" />
+                <ScalarProperty Name="FPZ38" ColumnName="FPZ38" />
+                <ScalarProperty Name="FPZ37" ColumnName="FPZ37" />
+                <ScalarProperty Name="FPZ36" ColumnName="FPZ36" />
+                <ScalarProperty Name="FPZ35" ColumnName="FPZ35" />
+                <ScalarProperty Name="FPZ34" ColumnName="FPZ34" />
+                <ScalarProperty Name="FPZ33" ColumnName="FPZ33" />
+                <ScalarProperty Name="FPZ32" ColumnName="FPZ32" />
+                <ScalarProperty Name="FPZ31" ColumnName="FPZ31" />
+                <ScalarProperty Name="FPZ30" ColumnName="FPZ30" />
+                <ScalarProperty Name="FPZ29" ColumnName="FPZ29" />
+                <ScalarProperty Name="FPZ28" ColumnName="FPZ28" />
+                <ScalarProperty Name="FPZ27" ColumnName="FPZ27" />
+                <ScalarProperty Name="FPZ26" ColumnName="FPZ26" />
+                <ScalarProperty Name="FPZ25" ColumnName="FPZ25" />
+                <ScalarProperty Name="FPZ24" ColumnName="FPZ24" />
+                <ScalarProperty Name="FPZ23" ColumnName="FPZ23" />
+                <ScalarProperty Name="FPZ22" ColumnName="FPZ22" />
+                <ScalarProperty Name="FPZ21" ColumnName="FPZ21" />
+                <ScalarProperty Name="FPZ20" ColumnName="FPZ20" />
+                <ScalarProperty Name="FPZ19" ColumnName="FPZ19" />
+                <ScalarProperty Name="FPZ18" ColumnName="FPZ18" />
+                <ScalarProperty Name="FPZ17" ColumnName="FPZ17" />
+                <ScalarProperty Name="FPZ16" ColumnName="FPZ16" />
+                <ScalarProperty Name="FPZ15" ColumnName="FPZ15" />
+                <ScalarProperty Name="FPZ14" ColumnName="FPZ14" />
+                <ScalarProperty Name="FPZ13" ColumnName="FPZ13" />
+                <ScalarProperty Name="FPZ12" ColumnName="FPZ12" />
+                <ScalarProperty Name="FPZ11" ColumnName="FPZ11" />
+                <ScalarProperty Name="FPZ10" ColumnName="FPZ10" />
+                <ScalarProperty Name="FPZ9" ColumnName="FPZ9" />
+                <ScalarProperty Name="FPZ8" ColumnName="FPZ8" />
+                <ScalarProperty Name="FPZ7" ColumnName="FPZ7" />
+                <ScalarProperty Name="FPZ6" ColumnName="FPZ6" />
+                <ScalarProperty Name="FPZ5" ColumnName="FPZ5" />
+                <ScalarProperty Name="FPZ4" ColumnName="FPZ4" />
+                <ScalarProperty Name="FPZ3" ColumnName="FPZ3" />
+                <ScalarProperty Name="FPZ2" ColumnName="FPZ2" />
+                <ScalarProperty Name="FPZ1" ColumnName="FPZ1" />
+                <ScalarProperty Name="fjz" ColumnName="fjz" />
+                <ScalarProperty Name="fkz" ColumnName="fkz" />
+                <ScalarProperty Name="FDDBZ" ColumnName="FDDBZ" />
+                <ScalarProperty Name="FGH" ColumnName="FGH" />
+                <ScalarProperty Name="FRow" ColumnName="FRow" />
+                <ScalarProperty Name="FItemid" ColumnName="FItemid" />
+                <ScalarProperty Name="FNOTE" ColumnName="FNOTE" />
+                <ScalarProperty Name="FJD" ColumnName="FJD" />
+                <ScalarProperty Name="FZT" ColumnName="FZT" />
+                <ScalarProperty Name="FTweak" ColumnName="FTweak" />
+                <ScalarProperty Name="FStraight" ColumnName="FStraight" />
+                <ScalarProperty Name="FAcross" ColumnName="FAcross" />
+                <ScalarProperty Name="FJRY" ColumnName="FJRY" />
+                <ScalarProperty Name="FJSZ" ColumnName="FJSZ" />
+                <ScalarProperty Name="FQB" ColumnName="FQB" />
+                <ScalarProperty Name="FJB" ColumnName="FJB" />
+                <ScalarProperty Name="FDXFK" ColumnName="FDXFK" />
+                <ScalarProperty Name="FSG" ColumnName="FSG" />
+                <ScalarProperty Name="FDD" ColumnName="FDD" />
+                <ScalarProperty Name="FSL" ColumnName="FSL" />
+                <ScalarProperty Name="FWorkFlow" ColumnName="FWorkFlow" />
+                <ScalarProperty Name="FAddress" ColumnName="FAddress" />
+                <ScalarProperty Name="FPBNote" ColumnName="FPBNote" />
+                <ScalarProperty Name="FWeight" ColumnName="FWeight" />
+                <ScalarProperty Name="FQty" ColumnName="FQty" />
+                <ScalarProperty Name="FBase1" ColumnName="FBase1" />
+                <ScalarProperty Name="FDeliveryDate" ColumnName="FDeliveryDate" />
+                <ScalarProperty Name="FCustomerNo" ColumnName="FCustomerNo" />
+                <ScalarProperty Name="FOrganization" ColumnName="FOrganization" />
+                <ScalarProperty Name="FBase" ColumnName="FBase" />
+                <ScalarProperty Name="FAmountType" ColumnName="FAmountType" />
+                <ScalarProperty Name="FOrderNo" ColumnName="FOrderNo" />
+                <ScalarProperty Name="FChekcDate" ColumnName="FChekcDate" />
+                <ScalarProperty Name="FChecker" ColumnName="FChecker" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="FBiller" ColumnName="FBiller" />
+                <ScalarProperty Name="FBillNo" ColumnName="FBillNo" />
+                <ScalarProperty Name="FClassTypeID" ColumnName="FClassTypeID" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_DY_YZKEntry1">
+            <EntityTypeMapping TypeName="EMTDB.t_DY_YZKEntry1">
+              <MappingFragment StoreEntitySet="t_DY_YZKEntry1">
+                <ScalarProperty Name="FPZ" ColumnName="FPZ" />
+                <ScalarProperty Name="FXM" ColumnName="FXM" />
+                <ScalarProperty Name="FPB" ColumnName="FPB" />
+                <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+                <ScalarProperty Name="FEntryID" ColumnName="FEntryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

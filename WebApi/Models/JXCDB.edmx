@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JXCDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t_CPInBillDetail">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FPID" Type="int" Nullable="false" />
+          <Property Name="FCPXiMaID" Type="int" />
+          <Property Name="FItemID" Type="int" Nullable="false" />
+          <Property Name="FBatchNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="FWeight" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="FUnitName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FNum" Type="int" />
+          <Property Name="FMemo" Type="nvarchar(max)" />
+          <Property Name="FWareCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="FLocationCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="FInDate" Type="datetime" />
+          <Property Name="FKFPeriod" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="FSourceBillNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF01" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF02" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF03" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF04" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF05" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF06" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF07" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF08" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF09" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF10" Type="numeric" Precision="16" Scale="6" />
+        </EntityType>
+        <EntityType Name="t_CPInBillHeader">
+          <Key>
+            <PropertyRef Name="FRecID" />
+          </Key>
+          <Property Name="FRecID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FBillNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FDate" Type="datetime" />
+          <Property Name="FDeptID" Type="int" />
+          <Property Name="FBiller" Type="nvarchar" MaxLength="50" />
+          <Property Name="FChecker" Type="nvarchar" MaxLength="50" />
+          <Property Name="FCheckDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="FCheckState" Type="char" MaxLength="1" />
+          <Property Name="FMangerID" Type="int" />
+          <Property Name="FQCMan" Type="int" />
+          <Property Name="FInOperMan" Type="int" />
+          <Property Name="FSecChecker" Type="nvarchar" MaxLength="50" />
+          <Property Name="FSecCheckDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="FSecCheckState" Type="char" MaxLength="1" />
+          <Property Name="FThirdChecker" Type="nvarchar" MaxLength="50" />
+          <Property Name="FThirdCheckDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="FThirdCheckState" Type="char" MaxLength="1" />
+          <Property Name="FCstCode" Type="int" />
+          <Property Name="FBillType" Type="int" />
+          <Property Name="FColorName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FPBName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FJD" Type="nvarchar" MaxLength="255" />
+          <Property Name="FZT" Type="nvarchar" MaxLength="255" />
+          <Property Name="FJZ" Type="nvarchar" MaxLength="255" />
+          <Property Name="FPBWeight" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="FYZKNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="FYZKNote" Type="nvarchar(max)" />
+          <Property Name="FOrderNote" Type="nvarchar(max)" />
+          <Property Name="FLost" Type="nvarchar" MaxLength="50" />
+          <Property Name="FProcessType" Type="nvarchar" MaxLength="255" />
+          <Property Name="FMemo" Type="nvarchar(max)" />
+          <Property Name="UDF01" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF02" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF03" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF04" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF05" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF06" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF07" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF08" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF09" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF10" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF11" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF12" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF13" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF14" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF15" Type="numeric" Precision="16" Scale="6" />
+        </EntityType>
+        <EntityType Name="t_DYJXC_GXHB">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FRecDate" Type="datetime" />
+          <Property Name="FGH" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FItemID" Type="int" Nullable="false" />
+          <Property Name="FProcedureID" Type="int" Nullable="false" />
+          <Property Name="FOperType" Type="char" MaxLength="1" />
+          <Property Name="FNum" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="FTime" Type="datetime" />
+          <Property Name="FOperMan" Type="nvarchar" MaxLength="20" />
+          <Property Name="FMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF01" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF02" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF03" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF04" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF05" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF06" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF07" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF08" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF09" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF10" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDF11" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF12" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF13" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF14" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF15" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF16" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF17" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF18" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF19" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="UDF120" Type="numeric" Precision="16" Scale="6" />
+          <Property Name="FJT" Type="int" />
+          <Property Name="FIndex" Type="int" />
+        </EntityType>
+        <EntityType Name="t_FGHCPIn">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FGH" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JXCDBStoreContainer">
+          <EntitySet Name="t_CPInBillDetail" EntityType="Self.t_CPInBillDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_CPInBillHeader" EntityType="Self.t_CPInBillHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_DYJXC_GXHB" EntityType="Self.t_DYJXC_GXHB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_FGHCPIn" EntityType="Self.t_FGHCPIn" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="JXCDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="JXCDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t_CPInBillDetail" EntityType="JXCDB.t_CPInBillDetail" />
+          <EntitySet Name="t_CPInBillHeader" EntityType="JXCDB.t_CPInBillHeader" />
+          <EntitySet Name="t_FGHCPIn" EntityType="JXCDB.t_FGHCPIn" />
+          <EntitySet Name="t_DYJXC_GXHB" EntityType="JXCDB.t_DYJXC_GXHB" />
+        </EntityContainer>
+        <EntityType Name="t_CPInBillDetail">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FPID" Type="Int32" Nullable="false" />
+          <Property Name="FCPXiMaID" Type="Int32" />
+          <Property Name="FItemID" Type="Int32" Nullable="false" />
+          <Property Name="FBatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FWeight" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="FUnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FNum" Type="Int32" />
+          <Property Name="FMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FWareCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FLocationCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FInDate" Type="DateTime" Precision="3" />
+          <Property Name="FKFPeriod" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="FSourceBillNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF03" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF04" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF05" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF06" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF07" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF08" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF09" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF10" Type="Decimal" Precision="16" Scale="6" />
+        </EntityType>
+        <EntityType Name="t_CPInBillHeader">
+          <Key>
+            <PropertyRef Name="FRecID" />
+          </Key>
+          <Property Name="FRecID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FBillNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FDate" Type="DateTime" Precision="3" />
+          <Property Name="FDeptID" Type="Int32" />
+          <Property Name="FBiller" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FChecker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FCheckDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FCheckState" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FMangerID" Type="Int32" />
+          <Property Name="FQCMan" Type="Int32" />
+          <Property Name="FInOperMan" Type="Int32" />
+          <Property Name="FSecChecker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FSecCheckDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FSecCheckState" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FThirdChecker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FThirdCheckDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FThirdCheckState" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FCstCode" Type="Int32" />
+          <Property Name="FBillType" Type="Int32" />
+          <Property Name="FColorName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FPBName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FJD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FZT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FJZ" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FPBWeight" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="FYZKNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FYZKNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FOrderNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FLost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FProcessType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UDF01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF03" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF04" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF05" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF06" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF07" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF08" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF09" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF10" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF11" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF12" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF13" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF14" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF15" Type="Decimal" Precision="16" Scale="6" />
+        </EntityType>
+        <EntityType Name="t_FGHCPIn">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FGH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="t_DYJXC_GXHB">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FRecDate" Type="DateTime" Precision="3" />
+          <Property Name="FGH" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FItemID" Type="Int32" Nullable="false" />
+          <Property Name="FProcedureID" Type="Int32" Nullable="false" />
+          <Property Name="FOperType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FNum" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="FTime" Type="DateTime" Precision="3" />
+          <Property Name="FOperMan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF03" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF04" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF05" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF06" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF07" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF08" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF09" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDF11" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF12" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF13" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF14" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF15" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF16" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF17" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF18" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF19" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="UDF120" Type="Decimal" Precision="16" Scale="6" />
+          <Property Name="FJT" Type="Int32" />
+          <Property Name="FIndex" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="JXCDB" />
+        <Alias Key="Target" Value="JXCDB.Store" />
+        <EntityContainerMapping CdmEntityContainer="JXCDBContainer" StorageEntityContainer="JXCDBStoreContainer">
+          <EntitySetMapping Name="t_CPInBillDetail">
+            <EntityTypeMapping TypeName="JXCDB.t_CPInBillDetail">
+              <MappingFragment StoreEntitySet="t_CPInBillDetail">
+                <ScalarProperty Name="UDF10" ColumnName="UDF10" />
+                <ScalarProperty Name="UDF09" ColumnName="UDF09" />
+                <ScalarProperty Name="UDF08" ColumnName="UDF08" />
+                <ScalarProperty Name="UDF07" ColumnName="UDF07" />
+                <ScalarProperty Name="UDF06" ColumnName="UDF06" />
+                <ScalarProperty Name="UDF05" ColumnName="UDF05" />
+                <ScalarProperty Name="UDF04" ColumnName="UDF04" />
+                <ScalarProperty Name="UDF03" ColumnName="UDF03" />
+                <ScalarProperty Name="UDF02" ColumnName="UDF02" />
+                <ScalarProperty Name="UDF01" ColumnName="UDF01" />
+                <ScalarProperty Name="FSourceBillNo" ColumnName="FSourceBillNo" />
+                <ScalarProperty Name="FKFPeriod" ColumnName="FKFPeriod" />
+                <ScalarProperty Name="FInDate" ColumnName="FInDate" />
+                <ScalarProperty Name="FLocationCode" ColumnName="FLocationCode" />
+                <ScalarProperty Name="FWareCode" ColumnName="FWareCode" />
+                <ScalarProperty Name="FMemo" ColumnName="FMemo" />
+                <ScalarProperty Name="FNum" ColumnName="FNum" />
+                <ScalarProperty Name="FUnitName" ColumnName="FUnitName" />
+                <ScalarProperty Name="FWeight" ColumnName="FWeight" />
+                <ScalarProperty Name="FBatchNo" ColumnName="FBatchNo" />
+                <ScalarProperty Name="FItemID" ColumnName="FItemID" />
+                <ScalarProperty Name="FCPXiMaID" ColumnName="FCPXiMaID" />
+                <ScalarProperty Name="FPID" ColumnName="FPID" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_CPInBillHeader">
+            <EntityTypeMapping TypeName="JXCDB.t_CPInBillHeader">
+              <MappingFragment StoreEntitySet="t_CPInBillHeader">
+                <ScalarProperty Name="UDF15" ColumnName="UDF15" />
+                <ScalarProperty Name="UDF14" ColumnName="UDF14" />
+                <ScalarProperty Name="UDF13" ColumnName="UDF13" />
+                <ScalarProperty Name="UDF12" ColumnName="UDF12" />
+                <ScalarProperty Name="UDF11" ColumnName="UDF11" />
+                <ScalarProperty Name="UDF10" ColumnName="UDF10" />
+                <ScalarProperty Name="UDF09" ColumnName="UDF09" />
+                <ScalarProperty Name="UDF08" ColumnName="UDF08" />
+                <ScalarProperty Name="UDF07" ColumnName="UDF07" />
+                <ScalarProperty Name="UDF06" ColumnName="UDF06" />
+                <ScalarProperty Name="UDF05" ColumnName="UDF05" />
+                <ScalarProperty Name="UDF04" ColumnName="UDF04" />
+                <ScalarProperty Name="UDF03" ColumnName="UDF03" />
+                <ScalarProperty Name="UDF02" ColumnName="UDF02" />
+                <ScalarProperty Name="UDF01" ColumnName="UDF01" />
+                <ScalarProperty Name="FMemo" ColumnName="FMemo" />
+                <ScalarProperty Name="FProcessType" ColumnName="FProcessType" />
+                <ScalarProperty Name="FLost" ColumnName="FLost" />
+                <ScalarProperty Name="FOrderNote" ColumnName="FOrderNote" />
+                <ScalarProperty Name="FYZKNote" ColumnName="FYZKNote" />
+                <ScalarProperty Name="FYZKNo" ColumnName="FYZKNo" />
+                <ScalarProperty Name="FPBWeight" ColumnName="FPBWeight" />
+                <ScalarProperty Name="FJZ" ColumnName="FJZ" />
+                <ScalarProperty Name="FZT" ColumnName="FZT" />
+                <ScalarProperty Name="FJD" ColumnName="FJD" />
+                <ScalarProperty Name="FPBName" ColumnName="FPBName" />
+                <ScalarProperty Name="FColorName" ColumnName="FColorName" />
+                <ScalarProperty Name="FBillType" ColumnName="FBillType" />
+                <ScalarProperty Name="FCstCode" ColumnName="FCstCode" />
+                <ScalarProperty Name="FThirdCheckState" ColumnName="FThirdCheckState" />
+                <ScalarProperty Name="FThirdCheckDate" ColumnName="FThirdCheckDate" />
+                <ScalarProperty Name="FThirdChecker" ColumnName="FThirdChecker" />
+                <ScalarProperty Name="FSecCheckState" ColumnName="FSecCheckState" />
+                <ScalarProperty Name="FSecCheckDate" ColumnName="FSecCheckDate" />
+                <ScalarProperty Name="FSecChecker" ColumnName="FSecChecker" />
+                <ScalarProperty Name="FInOperMan" ColumnName="FInOperMan" />
+                <ScalarProperty Name="FQCMan" ColumnName="FQCMan" />
+                <ScalarProperty Name="FMangerID" ColumnName="FMangerID" />
+                <ScalarProperty Name="FCheckState" ColumnName="FCheckState" />
+                <ScalarProperty Name="FCheckDate" ColumnName="FCheckDate" />
+                <ScalarProperty Name="FChecker" ColumnName="FChecker" />
+                <ScalarProperty Name="FBiller" ColumnName="FBiller" />
+                <ScalarProperty Name="FDeptID" ColumnName="FDeptID" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="FBillNo" ColumnName="FBillNo" />
+                <ScalarProperty Name="FRecID" ColumnName="FRecID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_FGHCPIn">
+            <EntityTypeMapping TypeName="JXCDB.t_FGHCPIn">
+              <MappingFragment StoreEntitySet="t_FGHCPIn">
+                <ScalarProperty Name="FGH" ColumnName="FGH" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_DYJXC_GXHB">
+            <EntityTypeMapping TypeName="JXCDB.t_DYJXC_GXHB">
+              <MappingFragment StoreEntitySet="t_DYJXC_GXHB">
+                <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+                <ScalarProperty Name="FJT" ColumnName="FJT" />
+                <ScalarProperty Name="UDF120" ColumnName="UDF120" />
+                <ScalarProperty Name="UDF19" ColumnName="UDF19" />
+                <ScalarProperty Name="UDF18" ColumnName="UDF18" />
+                <ScalarProperty Name="UDF17" ColumnName="UDF17" />
+                <ScalarProperty Name="UDF16" ColumnName="UDF16" />
+                <ScalarProperty Name="UDF15" ColumnName="UDF15" />
+                <ScalarProperty Name="UDF14" ColumnName="UDF14" />
+                <ScalarProperty Name="UDF13" ColumnName="UDF13" />
+                <ScalarProperty Name="UDF12" ColumnName="UDF12" />
+                <ScalarProperty Name="UDF11" ColumnName="UDF11" />
+                <ScalarProperty Name="UDF10" ColumnName="UDF10" />
+                <ScalarProperty Name="UDF09" ColumnName="UDF09" />
+                <ScalarProperty Name="UDF08" ColumnName="UDF08" />
+                <ScalarProperty Name="UDF07" ColumnName="UDF07" />
+                <ScalarProperty Name="UDF06" ColumnName="UDF06" />
+                <ScalarProperty Name="UDF05" ColumnName="UDF05" />
+                <ScalarProperty Name="UDF04" ColumnName="UDF04" />
+                <ScalarProperty Name="UDF03" ColumnName="UDF03" />
+                <ScalarProperty Name="UDF02" ColumnName="UDF02" />
+                <ScalarProperty Name="UDF01" ColumnName="UDF01" />
+                <ScalarProperty Name="FMemo" ColumnName="FMemo" />
+                <ScalarProperty Name="FOperMan" ColumnName="FOperMan" />
+                <ScalarProperty Name="FTime" ColumnName="FTime" />
+                <ScalarProperty Name="FNum" ColumnName="FNum" />
+                <ScalarProperty Name="FOperType" ColumnName="FOperType" />
+                <ScalarProperty Name="FProcedureID" ColumnName="FProcedureID" />
+                <ScalarProperty Name="FItemID" ColumnName="FItemID" />
+                <ScalarProperty Name="FGH" ColumnName="FGH" />
+                <ScalarProperty Name="FRecDate" ColumnName="FRecDate" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
