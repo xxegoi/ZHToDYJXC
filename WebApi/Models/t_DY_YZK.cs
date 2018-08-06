@@ -144,7 +144,7 @@ namespace WebApi.Models
         public decimal FPZ89 { get; set; }
         public decimal FPZ90 { get; set; }
         public decimal FPZ91 { get; set; }
-        public Nullable<decimal> FPZ92 { get; set; }
+        public decimal FPZ92 { get; set; }
         public bool FClosed { get; set; }
         public string FGYLC { get; set; }
         public string FOrderCheckIdea1 { get; set; }
@@ -166,5 +166,10 @@ namespace WebApi.Models
         public Nullable<System.DateTime> FDate6 { get; set; }
         public Nullable<System.DateTime> FDate3 { get; set; }
         public int FJJSX { get; set; }
+        public string FZHPZ { get; set; }
+        public Nullable<System.DateTime> FDate7 { get; set; }
+        public int FNBSX { get; set; }
+        public int FBZ { get; set; }
+        public string FTMH { get; set; }
     }
 }

@@ -19,17 +19,19 @@ namespace WebApi.Common
             var state = result.GetValue("State").ToString();
             var data = result.GetValue("Data");
 
+            var controller = actionExecutedContext.ActionContext.ControllerContext.ControllerDescriptor.ControllerName;
+            var action = actionExecutedContext.ActionContext.ActionDescriptor.ActionName;
+
             string message;
 
             if (state.ToLower()=="fail")
             {
-                message = exception;
-
-                LogHandler.Error("{0}请求处理失败: "  + message);
+                message =string.Format("{0}-{1}-请求处理失败: {2}" ,controller,action, exception);
+                LogHandler.Error(message);
             }
             else
             {
-                message = string.Format("{0}请求执行成功", data);
+                message = string.Format("{0}-{1}-请求处理成功: {2}", controller,action,data);
                 LogHandler.Info(message);
             }
 

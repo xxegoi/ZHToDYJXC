@@ -11,6 +11,7 @@ using WebApi.Common;
 namespace WebApi.Controllers
 {
     [Log]
+    [FGH_CloseCheck]
     public class YzkController : ApiController
     {
         EMTDBContainer db = new EMTDBContainer();
@@ -30,6 +31,14 @@ namespace WebApi.Controllers
                 }
 
                 var fgh = JObject.Parse(res.DataStr).GetValue("fgh").ToString();
+
+                ///检查这缸是否有配布工序，如果没有工序汇报的话，不能插入细码
+                var index = GetIndex(fgh, 1000);
+
+                if (index == -1)
+                {
+                    throw new Exception("没有配布工序，不能插入细码");
+                }
 
                 var yzk = GetFID(fgh);
 
@@ -76,7 +85,7 @@ namespace WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return new FailResult(obj.ToString(), ex.ToString());
+                return new FailResult(obj.ToString(), ex.Message);
             }
         }
 
@@ -139,13 +148,16 @@ namespace WebApi.Controllers
 
                 if (jxc.t_DYJXC_GXHB.Count(p => p.FGH == fgh &&p.FProcedureID==1025&& p.FIndex == index&&p.FOperType=="S") > 0)
                 {
-                    var entity = jxc.t_DYJXC_GXHB.SingleOrDefault(p => p.FGH == fgh && p.FIndex == index&&p.FProcedureID==1025);
+                    var entity = jxc.t_DYJXC_GXHB.Where(p => p.FGH == fgh && p.FIndex == index&&p.FProcedureID==1025&&p.FOperType=="S");
 
-                    entity.FNum = qty;
-                    entity.FRecDate = DateTime.Now;
-
-                    jxc.t_DYJXC_GXHB.Attach(entity);
-                    jxc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    entity.ToList().ForEach(p =>
+                    {
+                        p.FNum = qty;
+                        p.FRecDate = DateTime.Now;
+                        jxc.t_DYJXC_GXHB.Attach(p);
+                        jxc.Entry(p).State = System.Data.Entity.EntityState.Modified;
+                    });
+                    
                 }
                 else
                 {
@@ -181,6 +193,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public Result PBReport(JObject obj)
         {
+
             try
             {
                 Resolver res = new Resolver(obj);
@@ -200,33 +213,39 @@ namespace WebApi.Controllers
 
                 var index = GetIndex(fgh, 1000);
 
-                if (jxc.t_DYJXC_GXHB.Count(p => p.FGH == fgh&&p.FProcedureID==1000 && p.FIndex == index && p.FOperType == "S") > 0)
+                if (index == -1) { throw new Exception("此缸号没有配布工序，不能汇报"); }
+
+                if (jxc.t_DYJXC_GXHB.Count(p => p.FGH == fgh&&p.FProcedureID==1000  && p.FOperType == "S") > 0)
                 {
-                    var entity = jxc.t_DYJXC_GXHB.Last(p => p.FGH == fgh && p.FIndex == index&&p.FProcedureID==1000);
+                    var entity = jxc.t_DYJXC_GXHB.Where(p => p.FGH == fgh  && p.FProcedureID == 1000 && p.FOperType == "S");
 
-                    entity.FNum = qty;
-                    entity.FRecDate = DateTime.Now;
-
-                    jxc.t_DYJXC_GXHB.Attach(entity);
-                    jxc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    entity.ToList().ForEach(p =>
+                    {
+                        p.FNum = qty;
+                        p.FRecDate = DateTime.Now;
+                        jxc.t_DYJXC_GXHB.Attach(p);
+                        jxc.Entry(p).State = System.Data.Entity.EntityState.Modified;
+                    });
                 }
-
-                t_DYJXC_GXHB gxhb = new t_DYJXC_GXHB()
+                else
                 {
-                    FGH = fgh,
-                    FItemID = yzk.FItemid,
-                    FJT = 0,
-                    FRecDate = DateTime.Now,
-                    FProcedureID = 1000,
-                    FOperType = "S",
-                    FNum = qty,
-                    FIndex = index,
-                    FTime = DateTime.Now,
-                    FOperMan = "admin",
-                    FMemo = "正恒汇报"
-                };
-
-                jxc.t_DYJXC_GXHB.Add(gxhb);
+                    t_DYJXC_GXHB gxhb = new t_DYJXC_GXHB()
+                    {
+                        FGH = fgh,
+                        FItemID = yzk.FItemid,
+                        FJT = 0,
+                        FRecDate = DateTime.Now,
+                        FProcedureID = 1000,
+                        FOperType = "S",
+                        FNum = qty,
+                        FIndex = index,
+                        FTime = DateTime.Now,
+                        FOperMan = "admin",
+                        FMemo = "正恒汇报"
+                    };
+                    jxc.t_DYJXC_GXHB.Attach(gxhb);
+                    jxc.Entry(gxhb).State = System.Data.Entity.EntityState.Added;
+                }
 
                 jxc.SaveChanges();
 
@@ -265,13 +284,27 @@ namespace WebApi.Controllers
 
         private int GetIndex(string fgh,int workproce)
         {
+
+            var result = (from y in db.t_DY_YZK
+                          join e2 in db.t_DY_YZKEntry2 on y.FID equals e2.FID into g1
+                          from a in g1
+                          where y.FGH == fgh && a.FCurWorkProcedure == workproce
+                          select a).Count();
+
+            if (result == 0)
+            {
+                return -1;
+            }
+
             var index = (from yzk in db.t_DY_YZK
-                        join gylc in db.t_DY_GYLC on yzk.FGYLC equals gylc.FBillNo into g1
+                        join gylc in db.t_DY_GYLC on yzk.FWorkFlow equals gylc.FBillNo into g1
                         from a in g1.DefaultIfEmpty()
                         join gylce in db.t_DY_GYLCEntry on a.FID equals gylce.FID into g2
                         from b in g2.DefaultIfEmpty()
                         where yzk.FGH == fgh && b.FWorkProcedure == workproce
                         select b.FIndex).FirstOrDefault();
+
+            
 
             if (index > 0)
             {
@@ -280,6 +313,31 @@ namespace WebApi.Controllers
 
             return -1;
         }
+
+        /// <summary>
+        /// 检查缸号是否有配布工序，当返回值为-1时代表没有配布工序
+        /// </summary>
+        /// <param name="obj">｛"fgh":"180804500"｝</param>
+        /// <returns></returns>
+        [HttpPost]
+        public object HasPB(JObject obj)
+        {
+            try
+            {
+                Resolver res = new Resolver(obj);
+
+                var fgh = res.Data.GetValue("fgh").ToString();
+
+                var index = GetIndex(fgh, 1000);
+
+                return new SucessResult(index.ToString());
+
+            }catch(Exception ex)
+            {
+                return new FailResult(obj.ToString(), ex.Message);
+            }
+        }
+
         /// <summary>
         /// 锁定运转卡，运转卡不能反审
         /// </summary>
@@ -382,7 +440,9 @@ namespace WebApi.Controllers
                 var gxid = Convert.ToInt32(res.Data.GetValue("gx").ToString());
                 var index = GetIndex(fgh, Convert.ToInt32(gxid));
 
-                var entity = jxc.t_DYJXC_GXHB.Where(p => p.FGH == fgh && p.FIndex == index && p.FProcedureID == gxid).ToList();
+                
+
+                var entity = jxc.t_DYJXC_GXHB.Where(p => p.FGH == fgh && p.FProcedureID == gxid).ToList();
                 entity.ForEach(p =>
                 {
                     jxc.t_DYJXC_GXHB.Attach(p);
@@ -399,5 +459,7 @@ namespace WebApi.Controllers
                 return new FailResult(obj.ToString(), ex.ToString());
             }
         }
+
+
     }
 }

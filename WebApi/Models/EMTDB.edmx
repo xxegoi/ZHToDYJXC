@@ -15,7 +15,7 @@
           <Property Name="FText" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6002: 表/视图“EMT0517Test.dbo.t_DY_GYLCEntry”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+警告 6002: 表/视图“EMT.dbo.t_DY_GYLCEntry”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="t_DY_GYLCEntry">
           <Key>
             <PropertyRef Name="FEntryID" />
@@ -50,7 +50,7 @@
           <Property Name="FBase1" Type="int" Nullable="false" />
           <Property Name="FQty" Type="int" Nullable="false" />
           <Property Name="FWeight" Type="decimal" Precision="23" Scale="10" Nullable="false" />
-          <Property Name="FPBNote" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FPBNote" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="FAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FWorkFlow" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FSL" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -164,7 +164,7 @@
           <Property Name="FPZ89" Type="decimal" Precision="23" Scale="10" Nullable="false" />
           <Property Name="FPZ90" Type="decimal" Precision="23" Scale="10" Nullable="false" />
           <Property Name="FPZ91" Type="decimal" Precision="23" Scale="10" Nullable="false" />
-          <Property Name="FPZ92" Type="decimal" Precision="23" Scale="10" />
+          <Property Name="FPZ92" Type="decimal" Precision="23" Scale="10" Nullable="false" />
           <Property Name="FClosed" Type="bit" Nullable="false" />
           <Property Name="FGYLC" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="FOrderCheckIdea1" Type="nvarchar" MaxLength="1000" Nullable="false" />
@@ -178,14 +178,19 @@
           <Property Name="FBrandInfo" Type="int" Nullable="false" />
           <Property Name="FDecimal" Type="decimal" Precision="23" Scale="10" Nullable="false" />
           <Property Name="FDecimal1" Type="decimal" Precision="23" Scale="10" Nullable="false" />
-          <Property Name="FPBName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FPBName" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="FZHPZ" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FDate1" Type="datetime" />
           <Property Name="FDate2" Type="datetime" />
           <Property Name="FDate4" Type="datetime" />
           <Property Name="FDate5" Type="datetime" />
           <Property Name="FDate6" Type="datetime" />
           <Property Name="FDate3" Type="datetime" />
+          <Property Name="FDate7" Type="datetime" />
+          <Property Name="FNBSX" Type="int" Nullable="false" />
+          <Property Name="FBZ" Type="int" Nullable="false" />
           <Property Name="FJJSX" Type="int" Nullable="false" />
+          <Property Name="FTMH" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="t_DY_YZKEntry1">
           <Key>
@@ -196,13 +201,41 @@
           <Property Name="FID" Type="int" Nullable="false" />
           <Property Name="FIndex" Type="int" Nullable="false" />
           <Property Name="FPB" Type="int" Nullable="false" />
-          <Property Name="FXM" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FXM" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="FPZ" Type="decimal" Precision="23" Scale="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_DY_YZKEntry2">
+          <Key>
+            <PropertyRef Name="FEntryID" />
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FEntryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FID" Type="int" Nullable="false" />
+          <Property Name="FIndex" Type="int" Nullable="false" />
+          <Property Name="FJB" Type="int" Nullable="false" />
+          <Property Name="FQty" Type="int" Nullable="false" />
+          <Property Name="FRG" Type="int" Nullable="false" />
+          <Property Name="FLZQty" Type="int" Nullable="false" />
+          <Property Name="FYCJL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FYCQty" Type="int" Nullable="false" />
+          <Property Name="FDepartment" Type="int" Nullable="false" />
+          <Property Name="FSJDepartment" Type="int" Nullable="false" />
+          <Property Name="FCurWorkProcedure" Type="int" Nullable="false" />
+          <Property Name="FSCJT" Type="int" Nullable="false" />
+          <Property Name="FJSTime" Type="datetime" />
+          <Property Name="FKSTime" Type="datetime" />
+          <Property Name="FEndTime" Type="datetime" />
+          <Property Name="FXDGX" Type="int" Nullable="false" />
+          <Property Name="FOprationer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FBolCurWP" Type="bit" Nullable="false" />
+          <Property Name="FCheckBox" Type="bit" Nullable="false" />
+          <Property Name="FFinishTime" Type="datetime" />
         </EntityType>
         <EntityContainer Name="EMTDBStoreContainer">
           <EntitySet Name="t_DY_GYLC" EntityType="Self.t_DY_GYLC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_DY_YZK" EntityType="Self.t_DY_YZK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_DY_YZKEntry1" EntityType="Self.t_DY_YZKEntry1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_DY_YZKEntry2" EntityType="Self.t_DY_YZKEntry2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_DY_GYLCEntry" EntityType="Self.t_DY_GYLCEntry" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [t_DY_GYLCEntry].[FEntryID] AS [FEntryID], 
@@ -222,6 +255,7 @@
           <EntitySet Name="t_DY_YZKEntry1" EntityType="EMTDB.t_DY_YZKEntry1" />
           <EntitySet Name="t_DY_GYLC" EntityType="EMTDB.t_DY_GYLC" />
           <EntitySet Name="t_DY_GYLCEntry" EntityType="EMTDB.t_DY_GYLCEntry" />
+          <EntitySet Name="t_DY_YZKEntry2" EntityType="EMTDB.t_DY_YZKEntry2" />
         </EntityContainer>
         <EntityType Name="t_DY_YZK">
           <Key>
@@ -243,7 +277,7 @@
           <Property Name="FBase1" Type="Int32" Nullable="false" />
           <Property Name="FQty" Type="Int32" Nullable="false" />
           <Property Name="FWeight" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
-          <Property Name="FPBNote" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FPBNote" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="FAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FWorkFlow" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FSL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -357,7 +391,7 @@
           <Property Name="FPZ89" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
           <Property Name="FPZ90" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
           <Property Name="FPZ91" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
-          <Property Name="FPZ92" Type="Decimal" Precision="23" Scale="10" />
+          <Property Name="FPZ92" Type="Decimal" Precision="23" Scale="10" Nullable="false" />
           <Property Name="FClosed" Type="Boolean" Nullable="false" />
           <Property Name="FGYLC" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="FOrderCheckIdea1" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
@@ -371,7 +405,7 @@
           <Property Name="FBrandInfo" Type="Int32" Nullable="false" />
           <Property Name="FDecimal" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
           <Property Name="FDecimal1" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
-          <Property Name="FPBName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FPBName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="FDate1" Type="DateTime" Precision="3" />
           <Property Name="FDate2" Type="DateTime" Precision="3" />
           <Property Name="FDate4" Type="DateTime" Precision="3" />
@@ -379,6 +413,11 @@
           <Property Name="FDate6" Type="DateTime" Precision="3" />
           <Property Name="FDate3" Type="DateTime" Precision="3" />
           <Property Name="FJJSX" Type="Int32" Nullable="false" />
+          <Property Name="FZHPZ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FDate7" Type="DateTime" Precision="3" />
+          <Property Name="FNBSX" Type="Int32" Nullable="false" />
+          <Property Name="FBZ" Type="Int32" Nullable="false" />
+          <Property Name="FTMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="t_DY_YZKEntry1">
           <Key>
@@ -389,7 +428,7 @@
           <Property Name="FID" Type="Int32" Nullable="false" />
           <Property Name="FIndex" Type="Int32" Nullable="false" />
           <Property Name="FPB" Type="Int32" Nullable="false" />
-          <Property Name="FXM" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FXM" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="FPZ" Type="Decimal" Nullable="false" Precision="23" Scale="10" />
         </EntityType>
         <EntityType Name="t_DY_GYLC">
@@ -415,6 +454,33 @@
           <Property Name="FWorkProcedure" Type="Int32" Nullable="false" />
           <Property Name="FDepartment" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="t_DY_YZKEntry2">
+          <Key>
+            <PropertyRef Name="FEntryID" />
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FEntryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FID" Type="Int32" Nullable="false" />
+          <Property Name="FIndex" Type="Int32" Nullable="false" />
+          <Property Name="FJB" Type="Int32" Nullable="false" />
+          <Property Name="FQty" Type="Int32" Nullable="false" />
+          <Property Name="FRG" Type="Int32" Nullable="false" />
+          <Property Name="FLZQty" Type="Int32" Nullable="false" />
+          <Property Name="FYCJL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FYCQty" Type="Int32" Nullable="false" />
+          <Property Name="FDepartment" Type="Int32" Nullable="false" />
+          <Property Name="FSJDepartment" Type="Int32" Nullable="false" />
+          <Property Name="FCurWorkProcedure" Type="Int32" Nullable="false" />
+          <Property Name="FSCJT" Type="Int32" Nullable="false" />
+          <Property Name="FJSTime" Type="DateTime" Precision="3" />
+          <Property Name="FKSTime" Type="DateTime" Precision="3" />
+          <Property Name="FEndTime" Type="DateTime" Precision="3" />
+          <Property Name="FXDGX" Type="Int32" Nullable="false" />
+          <Property Name="FOprationer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FBolCurWP" Type="Boolean" Nullable="false" />
+          <Property Name="FCheckBox" Type="Boolean" Nullable="false" />
+          <Property Name="FFinishTime" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -426,6 +492,11 @@
           <EntitySetMapping Name="t_DY_YZK">
             <EntityTypeMapping TypeName="EMTDB.t_DY_YZK">
               <MappingFragment StoreEntitySet="t_DY_YZK">
+                <ScalarProperty Name="FTMH" ColumnName="FTMH" />
+                <ScalarProperty Name="FBZ" ColumnName="FBZ" />
+                <ScalarProperty Name="FNBSX" ColumnName="FNBSX" />
+                <ScalarProperty Name="FDate7" ColumnName="FDate7" />
+                <ScalarProperty Name="FZHPZ" ColumnName="FZHPZ" />
                 <ScalarProperty Name="FJJSX" ColumnName="FJJSX" />
                 <ScalarProperty Name="FDate3" ColumnName="FDate3" />
                 <ScalarProperty Name="FDate6" ColumnName="FDate6" />
@@ -608,6 +679,33 @@
               <MappingFragment StoreEntitySet="t_DY_GYLCEntry">
                 <ScalarProperty Name="FDepartment" ColumnName="FDepartment" />
                 <ScalarProperty Name="FWorkProcedure" ColumnName="FWorkProcedure" />
+                <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+                <ScalarProperty Name="FEntryID" ColumnName="FEntryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_DY_YZKEntry2">
+            <EntityTypeMapping TypeName="EMTDB.t_DY_YZKEntry2">
+              <MappingFragment StoreEntitySet="t_DY_YZKEntry2">
+                <ScalarProperty Name="FFinishTime" ColumnName="FFinishTime" />
+                <ScalarProperty Name="FCheckBox" ColumnName="FCheckBox" />
+                <ScalarProperty Name="FBolCurWP" ColumnName="FBolCurWP" />
+                <ScalarProperty Name="FOprationer" ColumnName="FOprationer" />
+                <ScalarProperty Name="FXDGX" ColumnName="FXDGX" />
+                <ScalarProperty Name="FEndTime" ColumnName="FEndTime" />
+                <ScalarProperty Name="FKSTime" ColumnName="FKSTime" />
+                <ScalarProperty Name="FJSTime" ColumnName="FJSTime" />
+                <ScalarProperty Name="FSCJT" ColumnName="FSCJT" />
+                <ScalarProperty Name="FCurWorkProcedure" ColumnName="FCurWorkProcedure" />
+                <ScalarProperty Name="FSJDepartment" ColumnName="FSJDepartment" />
+                <ScalarProperty Name="FDepartment" ColumnName="FDepartment" />
+                <ScalarProperty Name="FYCQty" ColumnName="FYCQty" />
+                <ScalarProperty Name="FYCJL" ColumnName="FYCJL" />
+                <ScalarProperty Name="FLZQty" ColumnName="FLZQty" />
+                <ScalarProperty Name="FRG" ColumnName="FRG" />
+                <ScalarProperty Name="FQty" ColumnName="FQty" />
+                <ScalarProperty Name="FJB" ColumnName="FJB" />
                 <ScalarProperty Name="FIndex" ColumnName="FIndex" />
                 <ScalarProperty Name="FID" ColumnName="FID" />
                 <ScalarProperty Name="FEntryID" ColumnName="FEntryID" />

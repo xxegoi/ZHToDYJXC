@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="EMTDB.t_DY_YZKEntry1" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="EMTDB.t_DY_GYLC" Width="1.5" PointX="3.375" PointY="3.75" />
         <EntityTypeShape EntityType="EMTDB.t_DY_GYLCEntry" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EMTDB.t_DY_YZKEntry2" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

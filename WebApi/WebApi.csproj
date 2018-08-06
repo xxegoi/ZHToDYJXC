@@ -198,6 +198,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\AuthAttribute.cs" />
+    <Compile Include="Common\FGH_CloseCheckAttribute.cs" />
     <Compile Include="Common\IValidator.cs" />
     <Compile Include="Common\JObjectToEntity.cs" />
     <Compile Include="Common\LogAttribute.cs" />
@@ -258,6 +259,9 @@
       <DependentUpon>EMTDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_DY_YZKEntry1.cs">
+      <DependentUpon>EMTDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_DY_YZKEntry2.cs">
       <DependentUpon>EMTDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_FGHCPIn.cs">

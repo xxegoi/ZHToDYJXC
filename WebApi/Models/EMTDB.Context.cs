@@ -29,5 +29,6 @@ namespace WebApi.Models
         public virtual DbSet<t_DY_YZKEntry1> t_DY_YZKEntry1 { get; set; }
         public virtual DbSet<t_DY_GYLC> t_DY_GYLC { get; set; }
         public virtual DbSet<t_DY_GYLCEntry> t_DY_GYLCEntry { get; set; }
+        public virtual DbSet<t_DY_YZKEntry2> t_DY_YZKEntry2 { get; set; }
     }
 }
